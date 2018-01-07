@@ -5,12 +5,11 @@
         <router-link to="/">
           <img class="navbar-brand-logo" src="http://img.shudong.wang/logo.png">
         </router-link>
-
       </div>
       <div class="navbar-left-container">
-            <router-link to="/">
-              <span class="navbar-link">首页</span>
-            </router-link>
+        <router-link to="/">
+          <span class="navbar-link">首页</span>
+        </router-link>
       </div>
       <div class="navbar-right-container" style="display: flex;">
         <div class="navbar-menu-container">

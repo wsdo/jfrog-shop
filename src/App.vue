@@ -34,8 +34,6 @@ export default {
   }
 }
 
-
-
 .slide-fade-enter-active {
   transition: all .3s ease;
 }
