@@ -105,7 +105,8 @@
     },
     methods: {
       ...mapActions([
-        'updateCartCount'
+        'updateCartCount',
+        'getCartCount'
       ]),
       init () {
         this.$http.post('/users/cartList').then((response) => {
@@ -121,6 +122,7 @@
         this.$http.post('/users/cartDel', {
           productId: this.productId
         }).then((response) => {
+          this.getCartCount()
           this.modalConfirm = false
           this.init()
         })
@@ -133,27 +135,12 @@
             return
           }
           item.productNum--
-        } else {
-          // 当前取反，当为未选中的时候是0，点击后变为1
-          item.checked = item.checked === '1' ? '0' : '1'
         }
         this.updateCartCount({
           productId: item.productId,
           productNum: item.productNum,
           checked: item.checked
         })
-        // this.$store.dispatch("updateCartCount");
-
-        // console.log(this.updateCartCount());
-        // this.updateCartCount(11)
-        // axios.post('/users/cartEdit', {
-        //   productId: item.productId,
-        //   productNum: item.productNum,
-        //   checked: item.checked
-        // }).then((response) => {
-        //   let res = response.data
-        //   console.log(res)
-        // })
       }
     }
   }
